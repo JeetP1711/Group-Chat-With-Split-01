@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Enhanced Group Chat</title>
+  <link rel="stylesheet" href="styles_1.css">
+</head>
+<body>
+    <div class="chat-container">
+        <!-- Header Section -->
+        <header class="group-header">
+            <div class="group-info">
+                <img id="groupProfilePicture" src="group-placeholder.png" alt="Group" class="group-pic">
+                <div class="group-details">
+                    <h1 id="groupName">Group Name</h1>
+          <!-- <p id="memberCount">0 Members</p> -->
+        </div>
+      </div>
+      <button id="editGroupBtn">Edit Group</button>
+    </header>
+    
+    <!-- Chat Area -->
+    <main class="chat-panel">
+        <div class="messages" id="messages"></div>
+        <div class="message-input">
+            <select id="senderSelect">
+                <option value="">Select Member</option>
+            </select>
+            <input id="messageInput" type="text" placeholder="Type a message">
+            <button id="sendBtn"><svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="30px" fill="#5084C1"><path d="M100-139v-246l333-95-333-97v-245l807 342-807 341Z"/></svg></button>
+            <input id="fileInput" type="file" hidden>
+            <button id="attachFileBtn"></button>
+            <!-- Split Details Button -->
+        <button id="splitDetailsBtn"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M440-200h80v-40h40q17 0 28.5-11.5T600-280v-120q0-17-11.5-28.5T560-440H440v-40h160v-80h-80v-40h-80v40h-40q-17 0-28.5 11.5T360-520v120q0 17 11.5 28.5T400-360h120v40H360v80h80v40ZM240-80q-33 0-56.5-23.5T160-160v-640q0-33 23.5-56.5T240-880h320l240 240v480q0 33-23.5 56.5T720-80H240Zm280-560v-160H240v640h480v-480H520ZM240-800v160-160 640-640Z"/></svg></button>
+    </div>
+    </main>
+</div>
+
+<!-- Group Management Modal -->
+<div class="modal" id="groupModal">
+    <div class="modal-content">
+        <h2>Edit Group</h2>
+        <label for="groupNameInput">Group Name:</label>
+        <input id="groupNameInput" type="text">
+        <label for="groupProfilePictureInput">Group Picture:</label>
+        <input id="groupProfilePictureInput" type="file">
+        <h3>Members</h3>
+        <ul id="groupMembersList"></ul>
+        <div class="add-member">
+            <input id="newMemberName" type="text" placeholder="Member Name">
+            <input id="newMemberContact" type="text" placeholder="Contact Number">
+            <input id="newMemberPicture" type="file">
+            <button id="addMemberBtn">Add Member</button>
+        </div>
+        <button id="closeModalBtn">Close</button>
+    </div>
+</div>
+
+<!-- Split Details Button
+<button id="splitDetailsBtn"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M440-200h80v-40h40q17 0 28.5-11.5T600-280v-120q0-17-11.5-28.5T560-440H440v-40h160v-80h-80v-40h-80v40h-40q-17 0-28.5 11.5T360-520v120q0 17 11.5 28.5T400-360h120v40H360v80h80v40ZM240-80q-33 0-56.5-23.5T160-160v-640q0-33 23.5-56.5T240-880h320l240 240v480q0 33-23.5 56.5T720-80H240Zm280-560v-160H240v640h480v-480H520ZM240-800v160-160 640-640Z"/></svg></button> -->
+
+<!-- Split Details Popup -->
+<div class="split-details-modal" id="splitDetailsModal">
+    <div class="split-details-content">
+        <h2>Split Payment</h2>
+        <label for="payerSelect">Select Payer:</label>
+        <select id="payerSelect">
+            <option value="">Select Member</option>
+        </select>
+        
+        <label for="eventDescription">Event Description:</label>
+        <input type="text" id="eventDescription" placeholder="Enter description">
+        
+        <label for="totalAmount">Total Amount:</label>
+        <input type="number" id="totalAmount" placeholder="Enter total amount">
+        
+        <label for="shareWith">Share With:</label>
+        <div id="shareWithList"></div>
+        
+        <button id="calculateSplitBtn">Calculate & Share</button>
+        <button id="closeSplitModalBtn">Close</button>
+    </div>
+</div>
+
+
+  <script src="script_!.js"></script>
+</body>
+</html>
